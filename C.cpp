@@ -1,19 +1,22 @@
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 
 using namespace std;
 
+double getPrice(int minutes){
+  if (minutes <= 15)
+  	return 0;
+  if (minutes > 15 && minutes <= 60)
+  	return 0.10 * (minutes - 15);
+}
+
 int main(){
 	std::ios::sync_with_stdio(false);
-	int n;
-	while (cin >> n && n){
-		int points = 0;
-		for (int j = 0; j < n; j++){
-			int minutes;
-			cin >> minutes;
-			points += calculate_points(xi, yi);
-		}
-		cout << points << " pontos" << endl;
+	int minutes;
+	while (cin >> minutes && minutes){
+ 		double preco = getPrice(minutes);
+		cout << setprecision(2) << fixed << preco  << endl;
 	}	
 	return 0;
 }
