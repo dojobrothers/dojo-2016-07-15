@@ -7,8 +7,15 @@ using namespace std;
 double getPrice(int minutes){
   if (minutes <= 15)
   	return 0;
-  if (minutes > 15 && minutes <= 60)
-  	return 0.10 * (minutes - 15);
+  else 
+  	if (minutes <= 60)
+  		return 0.10 * (minutes - 15);
+  	else
+  		if (minutes <=180)
+  			return 0.08 * (minutes - 15);
+  		else
+  			if (minutes <= 420)
+  				return 0.06 * (minutes - 15);
 }
 
 int main(){
