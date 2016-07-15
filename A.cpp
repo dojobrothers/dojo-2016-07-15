@@ -5,7 +5,7 @@ using namespace std;
 
 int calculate_points(double x,double y){
 	double r = sqrt(x*x + y*y);
-	return r >= 6 ? 0 : 10 - floor(r);
+	return r >= 6 ? 0 : r <= 0 ? 10 : 11 - ceil(r);
 }
 
 int main(){
