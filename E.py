@@ -1,9 +1,11 @@
 #!/usr/bin/python
 
 def process_line(line):
-  elems = line.split(' ')
-  for i in range(len(elems)):
-  	
+  	if eval(line.replace('=','==')):
+  		print 'Acertou miseravi'
+  	else:
+  		print 'Errou miseravi'
 
-n = input()
-	
+if __name__ == '__main__':
+	n = input()
+    process_line(n)
