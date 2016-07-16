@@ -24,7 +24,7 @@ int main(){
 	int minutes;
 	while (cin >> minutes && minutes){
  		double preco = getPrice(minutes);
-		cout << setprecision(2) << fixed << preco  << endl;
+		cout << setprecision(2) << fixed << "Total: R$ " << preco  << endl;
 	}	
 	return 0;
 }
