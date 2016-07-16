@@ -1,10 +1,17 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <algorithm>
 
 using namespace std;
 
 double getPrice(int minutes){
+
+  double preco_total = 0;
+  
+  minutes -= 15;
+  preco_total += 0.10 * min(45, max(0, minutes));
+
   if (minutes <= 15)
   	return 0;
   else 
@@ -16,6 +23,8 @@ double getPrice(int minutes){
   		else
   			if (minutes <= 420)
   				return 0.06 * (minutes - 15);
+  			else
+  				return 0.02 * (minutes - 15);
 }
 
 int main(){
