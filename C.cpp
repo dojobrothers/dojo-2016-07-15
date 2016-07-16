@@ -6,25 +6,17 @@
 using namespace std;
 
 double getPrice(int minutes){
-
   double preco_total = 0;
-  
+  preco_total += 0.00 * min(15, max(0, minutes));
   minutes -= 15;
   preco_total += 0.10 * min(45, max(0, minutes));
-
-  if (minutes <= 15)
-  	return 0;
-  else 
-  	if (minutes <= 60)
-  		return 0.10 * (minutes - 15);
-  	else
-  		if (minutes <=180)
-  			return 0.08 * (minutes - 15);
-  		else
-  			if (minutes <= 420)
-  				return 0.06 * (minutes - 15);
-  			else
-  				return 0.02 * (minutes - 15);
+  minutes -= 45;
+  preco_total += 0.08 * min(120, max(0, minutes));
+  minutes -= 120;
+  preco_total += 0.06 * min(4*60, max(0, minutes));
+  minutes -= 4*60;
+  preco_total += 0.02 * max(0, minutes);
+  return preco_total;
 }
 
 int main(){
